@@ -1,4 +1,4 @@
-package com.mlink.conf.api;
+package com.mlink.conf.app;
 
 public class NotFoundException extends RuntimeException{
 	private static final long serialVersionUID = 1L;
