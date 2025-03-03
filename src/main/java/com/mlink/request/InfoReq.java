@@ -1,35 +1,21 @@
-package com.mlink.entities;
+package com.mlink.request;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-@Entity
-@Table(name = "info")
-public class Info {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class InfoReq {
+    
     @NotNull(message = "{system.pk.notnull}")
-	@Column(name = "pk", nullable = false)
 	private Long pk;
 
-    @Column(name = "currentVersion", length = 10, nullable = false)
     @NotNull(message = "{system.currentVersion.notnull}")
     @Size(min = 1, max = 10, message = "{system.currentVersion.size}")
     private String currentVersion;
 
-    @Column(name = "supportsVersions", length = 100, nullable = false)
     @NotNull(message = "{system.supportsVersions.notnull}")
     @Size(min = 1, max = 100, message = "{system.supportsVersions.size}")
     private String supportsVersions;
 
-    @Column(name = "creator", length = 30, nullable = false)
     @NotNull(message = "{system.creator.notnull}")
     @Size(min = 1, max = 30, message = "{system.creator.size}")
     private String creator;
@@ -65,6 +51,5 @@ public class Info {
     public void setCreator(String creator) {
         this.creator = creator;
     }
-    
 
 }

@@ -27,7 +27,7 @@ public class CategoryS implements IcategoryS{
 
     @Override
     public List<Category> findAll() {
-        return categoryRepo.findAll()
+        return categoryRepo.findAll();
     }
 
     @Override
