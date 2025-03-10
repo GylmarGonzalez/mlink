@@ -51,7 +51,7 @@ public class DataSourceConfigDev {
 	 LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(userDatasource());
-		em.setPackagesToScan("com.mkink.entities");
+		em.setPackagesToScan("com.mlink.entities");
 		
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);		

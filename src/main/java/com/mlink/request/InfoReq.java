@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Size;
 
 public class InfoReq {
     
-    @NotNull(message = "{system.pk.notnull}")
 	private Long pk;
 
     @NotNull(message = "{system.currentVersion.notnull}")
@@ -14,7 +13,7 @@ public class InfoReq {
 
     @NotNull(message = "{system.supportsVersions.notnull}")
     @Size(min = 1, max = 100, message = "{system.supportsVersions.size}")
-    private String supportsVersions;
+    private String supportsVersion;
 
     @NotNull(message = "{system.creator.notnull}")
     @Size(min = 1, max = 30, message = "{system.creator.size}")
@@ -36,12 +35,12 @@ public class InfoReq {
         this.currentVersion = currentVersion;
     }
 
-    public String getSupportsVersions() {
-        return supportsVersions;
+    public String getSupportsVersion() {
+        return supportsVersion;
     }
 
-    public void setSupportsVersions(String supportsVersions) {
-        this.supportsVersions = supportsVersions;
+    public void setSupportsVersion(String supportsVersion) {
+        this.supportsVersion = supportsVersion;
     }
 
     public String getCreator() {

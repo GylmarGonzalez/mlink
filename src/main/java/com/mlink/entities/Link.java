@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -14,7 +15,8 @@ import jakarta.validation.constraints.Size;
 public class Link {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pks_seq")
+    @SequenceGenerator(name = "pks_seq", sequenceName = "pks_seq", allocationSize = 1)
 	@Column(name = "pk", nullable = false)
     @NotNull(message = "{link.pk.notnull}")
 	private Long pk;

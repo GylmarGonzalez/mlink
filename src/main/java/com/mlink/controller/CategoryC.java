@@ -81,7 +81,7 @@ public class CategoryC {
 		Optional<Category> optional = categoryS.findRecordById(id);
 		
 		if (optional.isEmpty()) {
-			throw new NotFoundException(messageSource.getMessage("app.notFound ", null, getLanguage()) + id);
+			throw new NotFoundException(messageSource.getMessage("app.notFound ", null, getLanguage()) );
 		}
         Category entidad = optional.get();
         CategoryRes response = mapper.map(entidad, CategoryRes.class);

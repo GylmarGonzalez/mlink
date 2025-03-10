@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Size;
 
 public class CategoryReq {
 
-    @NotNull(message = "{category.pk.notnull}")
 	private Long pk;
 
     @NotNull(message = "{category.name.notnull}")

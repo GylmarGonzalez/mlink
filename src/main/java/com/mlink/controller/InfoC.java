@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.lang.reflect.Type;
 import com.mlink.conf.api.RestControllerV1;
@@ -77,7 +76,7 @@ public class InfoC {
 		Optional<Info> optional = infoS.findRecordById(id);
 		
 		if (optional.isEmpty()) {
-			throw new NotFoundException(messageSource.getMessage("app.notFound ", null, getLanguage()) + id);
+			throw new NotFoundException(messageSource.getMessage("app.notFound", null, getLanguage()) );
 		}
         Info entidad = optional.get();
         InfoRes response = mapper.map(entidad, InfoRes.class);

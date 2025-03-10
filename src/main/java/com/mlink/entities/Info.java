@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -14,7 +15,8 @@ import jakarta.validation.constraints.Size;
 public class Info {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pks_seq")
+    @SequenceGenerator(name = "pks_seq", sequenceName = "pks_seq", allocationSize = 1)
     @NotNull(message = "{system.pk.notnull}")
 	@Column(name = "pk", nullable = false)
 	private Long pk;
@@ -24,10 +26,10 @@ public class Info {
     @Size(min = 1, max = 10, message = "{system.currentVersion.size}")
     private String currentVersion;
 
-    @Column(name = "supportsVersions", length = 100, nullable = false)
+    @Column(name = "supportsversion", length = 100, nullable = false)
     @NotNull(message = "{system.supportsVersions.notnull}")
     @Size(min = 1, max = 100, message = "{system.supportsVersions.size}")
-    private String supportsVersions;
+    private String supportsVersion;
 
     @Column(name = "creator", length = 30, nullable = false)
     @NotNull(message = "{system.creator.notnull}")
@@ -50,12 +52,12 @@ public class Info {
         this.currentVersion = currentVersion;
     }
 
-    public String getSupportsVersions() {
-        return supportsVersions;
+    public String getSupportsVersion() {
+        return supportsVersion;
     }
 
-    public void setSupportsVersions(String supportsVersions) {
-        this.supportsVersions = supportsVersions;
+    public void setSupportsVersion(String supportsVersion) {
+        this.supportsVersion = supportsVersion;
     }
 
     public String getCreator() {

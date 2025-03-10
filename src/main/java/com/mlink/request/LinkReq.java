@@ -5,12 +5,11 @@ import jakarta.validation.constraints.Size;
 
 public class LinkReq {
     
-    @NotNull(message = "{link.pk.notnull}")
+
 	private Long pk;
 
     @NotNull(message = "{link.urlText.notnull}")
     @Size(min = 1, max = 500, message = "{link.urlText.size}")
-    @NotNull(message = "{link.pk.notnull}")
     private String urlText;
 
     @NotNull(message = "{link.description.notnull}")

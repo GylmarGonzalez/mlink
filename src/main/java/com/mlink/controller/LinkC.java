@@ -77,7 +77,7 @@ public class LinkC {
 		Optional<Link> optional = linkS.findRecordById(id);
 		
 		if (optional.isEmpty()) {
-			throw new NotFoundException(messageSource.getMessage("app.notFound ", null, getLanguage()) + id); 
+			throw new NotFoundException(messageSource.getMessage("app.notFound ", null, getLanguage()) ); 
 		}
         Link entidad = optional.get();
         LinkRes response = mapper.map(entidad, LinkRes.class);

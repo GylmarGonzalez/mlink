@@ -1,15 +1,23 @@
 package com.mlink.conf.app;
 
+
 import java.util.Locale;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
 public class AppConfig implements WebMvcConfigurer {
+
+    @Bean
+    ModelMapper modelMapper() {
+	    return new ModelMapper();
+	}
 
     @Bean
     public MessageSource messageSource() {
@@ -20,11 +28,10 @@ public class AppConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public AcceptHeaderLocaleResolver localeResolver() {
-        AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
-        // set the default lenguage
-        localeResolver.setDefaultLocale(Locale.ENGLISH);
-        return localeResolver;
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver slr = new SessionLocaleResolver();
+        slr.setDefaultLocale(Locale.US);
+        return slr;
     }
 
     

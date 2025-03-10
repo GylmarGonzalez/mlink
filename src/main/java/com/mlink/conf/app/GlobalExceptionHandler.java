@@ -13,7 +13,7 @@ import com.mlink.conf.api.ApiError;
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    private String internalServerError = "Ha sucedido un error en el proceso del servicio";
+
 	
 	   private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {
 	       return new ResponseEntity<>(apiError, apiError.getStatus());
@@ -21,18 +21,18 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	   
 		@ExceptionHandler(NotFoundException.class)
 		public final ResponseEntity<Object> manejarModeloExcepciones(NotFoundException ex,WebRequest request){
-			 return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND,ex.getLocalizedMessage(), internalServerError));
+			 return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND,ex.getLocalizedMessage(), ""));
 		}
 	   
 		@ExceptionHandler(Exception.class)
 		public final ResponseEntity<Object> handleAllExceptions(Exception exception, WebRequest request) throws Exception {
-			 return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR,exception.getLocalizedMessage(), internalServerError));
+			 return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR,exception.getLocalizedMessage(), ""));
 		}
 	   
 	   @ExceptionHandler(RuntimeException.class)
 	   @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	   public final ResponseEntity<Object> handleAllUncaughtException(RuntimeException exception, WebRequest request){
-		   return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR,exception.getLocalizedMessage(), internalServerError));
+		   return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR,exception.getLocalizedMessage(), ""));
 	   }
 
 }

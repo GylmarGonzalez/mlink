@@ -7,7 +7,7 @@ public class InfoRes extends RepresentationModel<InfoRes>{
 
 	private Long pk;
     private String currentVersion;
-    private String supportsVersions;
+    private String supportsVersion;
     private String creator;
     public Long getPk() {
         return pk;
@@ -15,11 +15,24 @@ public class InfoRes extends RepresentationModel<InfoRes>{
     public String getCurrentVersion() {
         return currentVersion;
     }
-    public String getSupportsVersions() {
-        return supportsVersions;
+    public String getSupportsVersion() {
+        return supportsVersion;
     }
     public String getCreator() {
         return creator;
+    }
+
+    public void setPk(Long pk) {
+        this.pk = pk;
+    }
+    public void setCurrentVersion(String currentVersion) {
+        this.currentVersion = currentVersion;
+    }
+    public void setSupportsVersion(String supportsVersion) {
+        this.supportsVersion = supportsVersion;
+    }
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
     @Override
     public int hashCode() {
@@ -27,7 +40,7 @@ public class InfoRes extends RepresentationModel<InfoRes>{
         int result = super.hashCode();
         result = prime * result + ((pk == null) ? 0 : pk.hashCode());
         result = prime * result + ((currentVersion == null) ? 0 : currentVersion.hashCode());
-        result = prime * result + ((supportsVersions == null) ? 0 : supportsVersions.hashCode());
+        result = prime * result + ((supportsVersion == null) ? 0 : supportsVersion.hashCode());
         result = prime * result + ((creator == null) ? 0 : creator.hashCode());
         return result;
     }
@@ -50,10 +63,10 @@ public class InfoRes extends RepresentationModel<InfoRes>{
                 return false;
         } else if (!currentVersion.equals(other.currentVersion))
             return false;
-        if (supportsVersions == null) {
-            if (other.supportsVersions != null)
+        if (supportsVersion == null) {
+            if (other.supportsVersion != null)
                 return false;
-        } else if (!supportsVersions.equals(other.supportsVersions))
+        } else if (!supportsVersion.equals(other.supportsVersion))
             return false;
         if (creator == null) {
             if (other.creator != null)
