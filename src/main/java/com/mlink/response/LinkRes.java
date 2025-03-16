@@ -51,6 +51,7 @@ public class LinkRes extends RepresentationModel<LinkRes>{
         result = prime * result + ((enabled == null) ? 0 : enabled.hashCode());
         return result;
     }
+    @SuppressWarnings("null")
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

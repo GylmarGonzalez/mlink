@@ -44,6 +44,7 @@ public class InfoRes extends RepresentationModel<InfoRes>{
         result = prime * result + ((creator == null) ? 0 : creator.hashCode());
         return result;
     }
+    @SuppressWarnings("null")
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

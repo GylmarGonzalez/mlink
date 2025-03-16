@@ -43,6 +43,7 @@ public class CategoryRes extends RepresentationModel<CategoryRes>{
         result = prime * result + ((enabled == null) ? 0 : enabled.hashCode());
         return result;
     }
+    @SuppressWarnings("null")
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
