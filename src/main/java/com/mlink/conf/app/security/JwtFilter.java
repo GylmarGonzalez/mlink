@@ -1,4 +1,4 @@
-package com.mlink.conf.app;
+package com.mlink.conf.app.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

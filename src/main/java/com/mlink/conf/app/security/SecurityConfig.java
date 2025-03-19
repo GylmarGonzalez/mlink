@@ -1,4 +1,4 @@
-package com.mlink.conf.app;
+package com.mlink.conf.app.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,14 +29,16 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http,AuthenticationProvider authenticationProvider) throws Exception {
         http
-            .csrf(csrf -> csrf.disable())  // Deshabilitar CSRF si es API REST
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // JWT o sin estado
+            .csrf(csrf -> csrf.disable())  
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) 
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/v1/register").permitAll()
-                .requestMatchers("/api/v1/login").permitAll()   // Rutas públicas
-                //.requestMatchers("/api/v1/admin/**").hasRole("ADMIN")  // Rutas solo para ADMIN
-                //.requestMatchers("/api/v1/user/**").hasRole("USER")  // Rutas solo para USER
-                .anyRequest().authenticated()  // Cualquier otra solicitud requiere autenticación
+                .requestMatchers("/api/v1/login").permitAll()  
+                .requestMatchers("/api/v1/parameters").hasRole("ADMIN")  
+                .requestMatchers("/api/v1/infos").hasRole("USER")  
+                .requestMatchers("/api/v1/categories").hasRole("USER")
+                .requestMatchers("/api/v1/links").hasRole("USER") 
+                .anyRequest().authenticated()  
             )
             .authenticationProvider(authenticationProvider)
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

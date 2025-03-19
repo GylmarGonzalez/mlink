@@ -1,5 +1,10 @@
 package com.mlink.controller;
 
+import java.util.Locale;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -9,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mlink.conf.api.RestControllerV1;
-import com.mlink.conf.app.JwtUtil;
+import com.mlink.conf.app.security.JwtUtil;
 import com.mlink.entities.User;
 import com.mlink.request.UserReq;
 import com.mlink.services.impl.CustomUserDetailsService;
@@ -22,6 +27,17 @@ public class UserC {
     private final JwtUtil jwtUtil;
     private final CustomUserDetailsService userService;
 
+    private MessageSource messageSource;
+
+    @Autowired
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
+
+    public Locale getLanguage() {
+        return LocaleContextHolder.getLocale();
+    }
+
     public UserC(CustomUserDetailsService userService,AuthenticationManager authenticationManager,JwtUtil jwtUtil) {
         this.userService = userService;
         this.authenticationManager = authenticationManager;
@@ -31,7 +47,7 @@ public class UserC {
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody UserReq request) {
         User user = userService.registerUser(request);
-        return ResponseEntity.ok("Usuario registrado con éxito: " + user.getUsername()); // fix 
+        return ResponseEntity.ok(messageSource.getMessage("app.user.created", null, getLanguage()) +" " +user.getUsername()); 
     }
 
     
