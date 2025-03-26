@@ -1,0 +1,984 @@
+{
+	"info": {
+		"_postman_id": "fa6d74ff-6c01-4d47-9fe4-fbb36c9bf6e4",
+		"name": "Mlink Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6411516"
+	},
+	"item": [
+		{
+			"name": "Test Generic",
+			"item": [
+				{
+					"name": "Testing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4022/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentVersion\":\"0.1\",\n    \"supportsVersion\" : \"0.1\",\n    \"creator\" : \"Gylmar Gonzalez\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/infos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"infos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pk\": 2,\n    \"currentVersion\":\"0.1\",\n    \"supportsVersion\" : \"0.1\",\n    \"creator\" : \"Gylmar Rene Gonzalez Tejada\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/infos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"infos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/infos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"infos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/infos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"infos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/infos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"infos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parameters",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImlhdCI6MTc0MjQxNzQ2MiwiZXhwIjoxNzQyNDIxMDYyfQ.-Xw9s9pq9D5NdmTr0qUPEZh0ENvNjeh9UZy2-QCPFj8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pk\":\"KEY_TOKEN\",\n    \"valueText\" : \"EsteEsUnSuperSecretoDe32Caracteres!!\",\n    \"enabled\" : \"A\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/parameters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"parameters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImlhdCI6MTc0MjQxNzQ2MiwiZXhwIjoxNzQyNDIxMDYyfQ.-Xw9s9pq9D5NdmTr0qUPEZh0ENvNjeh9UZy2-QCPFj8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pk\":\"KEY_TOKEN\",\n    \"valueText\" : \"modi\",\n    \"enabled\" : \"A\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/parameters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"parameters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImlhdCI6MTc0MjQxNzQ2MiwiZXhwIjoxNzQyNDIxMDYyfQ.-Xw9s9pq9D5NdmTr0qUPEZh0ENvNjeh9UZy2-QCPFj8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/parameters/KEY_TOKEN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"parameters",
+								"KEY_TOKEN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImlhdCI6MTc0MjQxNzQ2MiwiZXhwIjoxNzQyNDIxMDYyfQ.-Xw9s9pq9D5NdmTr0qUPEZh0ENvNjeh9UZy2-QCPFj8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/parameters/KEY_TOKEN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"parameters",
+								"KEY_TOKEN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImlhdCI6MTc0MjQxNzQ2MiwiZXhwIjoxNzQyNDIxMDYyfQ.-Xw9s9pq9D5NdmTr0qUPEZh0ENvNjeh9UZy2-QCPFj8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/parameters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"parameters"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Docker\",\n    \"description\" : \"Links y comandos del dia a dia con docker\",\n    \"enabled\" : \"A\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pk\" : 4,\n    \"name\":\"Docker\",\n    \"description\" : \"Links y comandos\",\n    \"enabled\" : \"A\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/categories/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/categories/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Link",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"urlText\":\"Docker\",\n    \"description\" : \"Links y comandos del dia a dia con docker\",\n    \"fkCategory\" : 5,\n    \"enabled\" : \"A\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/links",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pk\" : 7,\n    \"urlText\":\"https://github.com/GylmarGonzalez/vadmin/blob/main/src/main/java/com/vadmin/request/general/PlataformasRequest.java\",\n    \"description\" : \"Links y comandos del dia a dia con docker\",\n    \"fkCategory\" : 5,\n    \"enabled\" : \"A\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/links",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/links/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"links",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/links/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"links",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndWVzdCIsImlhdCI6MTc0MjQyMDU3NCwiZXhwIjoxNzQyNDI0MTc0fQ.btqADjAdZIRYu1_CuflhaKVdxjeYKpkMu0Q9BBFrQQosJ8K_pXieQndUGRqg-_2QlqhNbGvZudtOV55B844feQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/links",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"links"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"guest\",\n    \"password\": \"gylmar\",\n    \"roles\": [\"ROLE_USER\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"guest\",\n    \"password\": \"gylmar\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4022/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Docker test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"guest\",\n    \"password\": \"gylmar\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.18.0.4:4022/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"0",
+								"4"
+							],
+							"port": "4022",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

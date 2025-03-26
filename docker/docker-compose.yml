@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postsgresqlDB
+    environment:
+      POSTGRES_PASSWORD: gylmar
+      POSTGRES_DB: mlink
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - postgres_net
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@mlink.com # Correo de administrador para pgAdmin
+      PGADMIN_DEFAULT_PASSWORD: gylmar # Contraseña para el administrador
+    ports:
+      - "8080:80"  # Mapeo del puerto 8080 en la máquina local al puerto 80 del contenedor pgAdmin
+    depends_on:
+      - db
+    networks:
+      - postgres_net
+
+volumes:
+  postgres_data:
+
+networks:
+  postgres_net:
+    driver: bridge
