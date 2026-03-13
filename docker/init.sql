@@ -57,3 +57,6 @@ CREATE TABLE user_roles (
 INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
 INSERT INTO roles (name) VALUES ('ROLE_USER');
 
+INSERT INTO public.parameters(
+	pk, valuetext, enabled)
+	VALUES ('KEY_TOKEN', 'EsteEsUnSuperSecretoDe32Caracteres!!', 'S');

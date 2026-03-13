@@ -1,0 +1,10 @@
+# Use this workspace to collaborate
+workspace:
+  id: 2ced4f2e-d3d4-4ec8-95c1-38686f049e45
+
+localResources:
+  collections:
+    - ../Mlink Local.postman_collection.json
+cloudResources:
+  collections:
+    ../postman/collections/Mlink Local: dc0f7898-7ef4-4ffe-86be-3f3c3ddebe12
