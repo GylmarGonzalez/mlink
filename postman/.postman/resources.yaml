@@ -5,6 +5,8 @@ workspace:
 localResources:
   collections:
     - ../Mlink Local.postman_collection.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
 cloudResources:
   collections:
-    ../postman/collections/Mlink Local: dc0f7898-7ef4-4ffe-86be-3f3c3ddebe12
+    ../postman/collections/Mlink Local: 3497b0be-a72d-4944-baf4-2b2fcb236dcc
